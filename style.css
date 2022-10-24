@@ -47,8 +47,51 @@
     height: 100px;
     border: 1px solid black;
     justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: transparent;
+    perspective: 1000px;
 }
 
+.box-inner {
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.box:hover .box-inner {
+    transform: rotateY(180deg);
+}
+
+.box-front {
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.box:hover .box-front {
+    transform: rotateY(180deg);
+}
+
+.box-front, .box-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.box-front {
+    background-color: black;
+    color: white;
+}
+
+.box-back {
+    background-color: grey;
+    color: white;
+    transform: rotateY(180deg);
+}
 
 
 
