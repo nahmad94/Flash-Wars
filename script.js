@@ -16,3 +16,12 @@ window.onclick = function(event) {
     }
 }
 
+var box = document.querySelector('#box-1')
+
+box.addEventListener('click', flip)
+
+function flip() {
+    box.classList.toggle('flipCard')
+};
+
+

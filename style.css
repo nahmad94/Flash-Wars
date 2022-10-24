@@ -1,3 +1,9 @@
+.body {
+    background-color: white;
+}
+
+/* Modal & Heading  */
+
 .modal {
     display: none;
     position: fixed;
@@ -33,6 +39,8 @@
     cursor: pointer;
 }
 
+/* The Game  */
+
 .container {
     max-width: 80%;
     height: 75%;
@@ -43,16 +51,49 @@
     justify-content: center;
 }
 
-.box {
+.box-main {
+    position: absolute;
     height: 100px;
-    border: 1px solid black;
-    justify-content: center;
-    margin: 20px;
-    padding: 10px;
-    background-color: transparent;
-    perspective: 1000px;
+    width: 100px;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
+.box-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: transparent;
+    color: white;
+    text-align: center;
+    transform: rotateY('180');
+}
+
+.flipCard {
+    transform: rotateY('180');
+}
+/* 
 .box-inner {
     position: relative;
     width: auto;
@@ -64,6 +105,7 @@
 
 .box:hover .box-inner {
     transform: rotateY(180deg);
+
 }
 
 .box-front {
@@ -99,4 +141,4 @@
 
 
 
-
+ */
