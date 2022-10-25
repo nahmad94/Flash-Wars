@@ -16,12 +16,23 @@ window.onclick = function(event) {
     }
 }
 
-var box = document.querySelector('#box-1')
-
-box.addEventListener('click', flip)
+var cards = document.querySelectorAll('.cards_single');
 
 function flip() {
-    box.classList.toggle('flipCard')
+    this.classList.toggle('flip')
+    console.log('flipped')
 };
+
+cards.forEach((card) => card.addEventListener('click', flip));
+
+
+
+
+
+
+
+
+
+
 
 
