@@ -86,10 +86,10 @@
     flex-wrap: wrap;
 }
 
-/* .card_front {
+.card_front {
     transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
-} */
+}
 
 .card_back {
     transform: rotateY(180deg);
