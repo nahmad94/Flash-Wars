@@ -12,6 +12,7 @@ let start = document.querySelector('.start')
 let win = document.querySelector('.win')
 // let flippedCards = document.querySelectorAll('.flip')
 let totalFlips = 0
+let lastClicked;
 
 const initial = {
     gameStarted: false,
@@ -48,20 +49,36 @@ window.onclick = function(event) {
 
 // let len = cards.classList.contains('flip')
 
-cards.forEach((card) => card.addEventListener('click', function() {
+cards.forEach((card, index) => card.addEventListener('click', function(event) {
     let flippedCards = document.querySelectorAll('.flip')
+    let img = document.querySelectorAll('.card_flip')
     if (this.classList.contains('flip') === true) {
         console.log('already flipped')
-        
     } else if (this.classList.contains('flip') === false) {
         console.log(flippedCards.length)
-        if (flippedCards.length % 2 !== 0 ) {
-            console.log('check matches')
-        } else if (flippedCards.length %2 === 0) {
+        if (flippedCards.length > 0) {
+            if (flippedCards.length % 2 !== 0 ) {
+                this.classList.toggle('flip')
+                console.log('check matches')
+                if (lastClicked === img[index].getAttribute('src')) {
+                    console.log('same images')
+                } else if (lastClicked === undefined) {
+                    console.log('none to compare')
+                } else if (lastClicked !== img[index].getAttribute('src')) {
+                    console.log('not a match')
+                }
+
+            } else if (flippedCards.length %2 === 0) {
+                this.classList.toggle('flip')
+                console.log('flipped one for you')
+            }
+        } else if (flippedCards.length <= 0) {
             this.classList.toggle('flip')
-            console.log('flipped one for you')
+            console.log('first card flip')
         }
-        
+        console.log(lastClicked)
+        lastClicked = img[index].getAttribute('src')
+        console.log(lastClicked)
         totalFlips++
     }
 }));
