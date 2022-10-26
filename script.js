@@ -10,7 +10,7 @@ let moves = document.querySelector('.moves')
 let timer = document.querySelector('.timer')
 let start = document.querySelector('.start')
 let win = document.querySelector('.win')
-let flippedCards = 0
+// let flippedCards = document.querySelectorAll('.flip')
 let totalFlips = 0
 
 const initial = {
@@ -46,26 +46,23 @@ window.onclick = function(event) {
 
 
 
-
+// let len = cards.classList.contains('flip')
 
 cards.forEach((card) => card.addEventListener('click', function() {
-    console.log(this.classList.contains('flip').lenght)
+    let flippedCards = document.querySelectorAll('.flip')
     if (this.classList.contains('flip') === true) {
         console.log('already flipped')
-        // if (this.classList.contains('flip').lenght )
         
     } else if (this.classList.contains('flip') === false) {
-        // this.classList.toggle('flip')
-        if (this.classList.contains('flip').lenght < 2) {
+        console.log(flippedCards.length)
+        if (flippedCards.length % 2 !== 0 ) {
+            console.log('check matches')
+        } else if (flippedCards.length %2 === 0) {
             this.classList.toggle('flip')
-            console.log('flip one more')
-        } else if (this.classList.contains('flip').lenght === 2) {
-            console.log('check flips')
-        } else if (this.classList.contains('flip').lenght === undefined) {
-            this.classList.toggle('flip')
-            console.log('first flip')
+            console.log('flipped one for you')
         }
-        flippedCards++
+        
+        totalFlips++
     }
 }));
 
