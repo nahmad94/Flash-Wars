@@ -55,13 +55,10 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
     if (this.classList.contains('flip') === true) {
         console.log('already flipped')
     } else if (this.classList.contains('flip') === false) {
-        console.log(flippedCards.length)
-        if (flippedCards.length > 0) {
-            
+        if (15 > flippedCards.length > 0) {
             if (flippedCards.length % 2 !== 0 ) {
-                console.log('check matches')
                 if (lastClickedImg === img[index].getAttribute('src')) {
-                    console.log('same images')
+                    console.log('match!')
                     this.classList.toggle('flip')
                     this.classList.add('matched')
                     lastClicked.classList.add('matched')
@@ -73,50 +70,23 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
                     lastClicked.classList.toggle('flip')
                     this.classList.toggle('flip')
                 }
-
             } else if (flippedCards.length %2 === 0) {
                 this.classList.toggle('flip')
-                console.log('flipped one for you')
+                console.log('flip one more to check')
             }
         } else if (flippedCards.length <= 0) {
             this.classList.toggle('flip')
             console.log('first card flip')
+        } else if (flippedCards.length >= 14) {
+            alert('game over')
         }
         lastClicked = this
         lastClickedImg = img[index].getAttribute('src')
         totalFlips++
         console.log(totalFlips)
+        console.log(flippedCards.length)
     }
 }));
-
-
-
-
-
-function flip(event) {
-    if (this.classList('flip') === true) {
-        console.log('already flipped')
-    } else if (this.classList('flip') === false) {
-        this.classList.toggle('flip')
-        flippedCards++
-    }
-
-
-
-    // this.classList.toggle('flip')
-    flippedCards++
-    totalFlips++
-    
-    // const eventTarget = event.target
-    // const eventParent = eventTarget.parentElement
-    // console.log(eventParent)
-
-    // if (eventTarget.className.includes('card') && !eventParent.className.includes('flip')) {
-    //     flipCard(eventParent)
-    // } else {
-    //     console.log('error')
-    // }
-};
 
 start.addEventListener('click', initial)
 
