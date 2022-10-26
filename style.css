@@ -1,5 +1,7 @@
 .body {
     background-color: white;
+    display: flex;
+
 }
 
 /* Modal & Heading  */
@@ -57,7 +59,7 @@
 }
 
 .cards_single {
-    background: purple;
+    background: white;
     color: green;
     display: flex;
     flex-flow: row wrap;
@@ -70,7 +72,7 @@
     -webkit-transition: transform 0.6s;
     transform-style: preserve-3d;
     height: auto;
-    width: 20%;
+    width: px;
 }
 
 .card_logo, .card_flip {
@@ -118,8 +120,8 @@
 }
 
 .card_logo {
-    width: 25%;
-    height: auto;
+    width: 100px;
+    height: 100px;
 }
 
 
