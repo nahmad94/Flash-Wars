@@ -119,6 +119,9 @@
     height: 100px;
 }
 
+.matched {
+    border: solid black 25px;
+}
 
 
 

@@ -57,15 +57,21 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
     } else if (this.classList.contains('flip') === false) {
         console.log(flippedCards.length)
         if (flippedCards.length > 0) {
+            
             if (flippedCards.length % 2 !== 0 ) {
-                this.classList.toggle('flip')
                 console.log('check matches')
-                if (lastClicked === img[index].getAttribute('src')) {
+                if (lastClickedImg === img[index].getAttribute('src')) {
                     console.log('same images')
-                } else if (lastClicked === undefined) {
-                    console.log('none to compare')
-                } else if (lastClicked !== img[index].getAttribute('src')) {
+                    this.classList.toggle('flip')
+                    this.classList.add('matched')
+                    lastClicked.classList.add('matched')
+                // } else if (lastClickedImg === undefined) {
+                //     console.log('none to compare')
+                } else if (lastClickedImg !== img[index].getAttribute('src')) {
                     console.log('not a match')
+                    this.classList.toggle('flip')
+                    lastClicked.classList.toggle('flip')
+                    this.classList.toggle('flip')
                 }
 
             } else if (flippedCards.length %2 === 0) {
@@ -76,10 +82,10 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
             this.classList.toggle('flip')
             console.log('first card flip')
         }
-        console.log(lastClicked)
-        lastClicked = img[index].getAttribute('src')
-        console.log(lastClicked)
+        lastClicked = this
+        lastClickedImg = img[index].getAttribute('src')
         totalFlips++
+        console.log(totalFlips)
     }
 }));
 
