@@ -49,12 +49,22 @@ window.onclick = function(event) {
 
 
 cards.forEach((card) => card.addEventListener('click', function() {
-    console.log(this)
+    console.log(this.classList.contains('flip').lenght)
     if (this.classList.contains('flip') === true) {
         console.log('already flipped')
+        // if (this.classList.contains('flip').lenght )
         
     } else if (this.classList.contains('flip') === false) {
-        this.classList.toggle('flip')
+        // this.classList.toggle('flip')
+        if (this.classList.contains('flip').lenght < 2) {
+            this.classList.toggle('flip')
+            console.log('flip one more')
+        } else if (this.classList.contains('flip').lenght === 2) {
+            console.log('check flips')
+        } else if (this.classList.contains('flip').lenght === undefined) {
+            this.classList.toggle('flip')
+            console.log('first flip')
+        }
         flippedCards++
     }
 }));
