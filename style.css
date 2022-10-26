@@ -1,7 +1,7 @@
 .body {
     background-color: white;
     display: flex;
-
+    font-family: helvetica;
 }
 
 /* Modal & Heading  */
@@ -42,12 +42,6 @@
 }
 
 /* The Game  */
-.container{
-    display: flex;
-    flex-flow: row wrap;
-    /* width: 50%;
-    height: auto; */
-}
 
 .cards {
     display: flex;
@@ -73,6 +67,7 @@
     transform-style: preserve-3d;
     height: auto;
     width: px;
+    user-select: none;
 }
 
 .card_logo, .card_flip {
@@ -105,7 +100,7 @@
     -webkit-transform: rotateY(180deg);
 }
 
-.container {
+.board {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;

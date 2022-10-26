@@ -13,6 +13,14 @@
         <h2>Return of JavaScript</h2>
     </header>
     <section>
+        <div class="controller">
+            <button class="start">Start</button>
+            <div class="stats">
+                <div class="moves">0 moves</div>
+                <div class="timer">Time: 0 seconds</div>
+            </div>
+        </div>
+        <div>
             <!-- Modal  -->
             <button id="howTo">Open how to modal</button>
             <div id="myModal" class="modal">
@@ -21,8 +29,9 @@
                     <p>How to instructions </p>
                 </button>
             </div>
+        </div>
             <hr>
-        <div class="container">
+        <div class="board">
             <!-- Game  -->
             <div class="cards">
                 <div class="cards_single" id="box-1">
@@ -153,11 +162,9 @@
                         <img class="card_flip" src="imgs/kenobi.jpg" width="100" height="100">
                     </div>
                 </div>
-
-
-
-
             </div>
+
+            <div class="win">You Won!</div>
         </div>
     </section>
     <script defer src="script.js"></script>
