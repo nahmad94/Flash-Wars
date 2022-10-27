@@ -57,7 +57,7 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
         return;
     } else if (this.classList.contains('flip') === false) {
         this.classList.toggle('flip')
-        if (14 > flippedCards.length > 0) {
+        if (15 > flippedCards.length > 0) {
             if (flippedCards.length % 2 !== 0 ) {
                 if (lastClickedImg === img[index].getAttribute('src')) {
                     console.log('match!')
@@ -77,9 +77,9 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
         } else if (flippedCards.length <= 0) {
             // this.classList.toggle('flip')
             console.log('first card flip')
-        } else if (flippedCards.length >= 14) {
+        } else if (flippedCards.length >= 15) {
             // this.classList.toggle('flip')
-            alert('game over')
+            alert('Game Over: You Win!')
         }
         lastClicked = this
         lastClickedImg = img[index].getAttribute('src')
