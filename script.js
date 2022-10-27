@@ -1,18 +1,17 @@
-var modal = document.querySelector('#myModal')
-var howToBut = document.querySelector('#howTo')
-var close = document.querySelector('.close')
+var modal = document.querySelector('#myModal');
+var howToBut = document.querySelector('#howTo');
+var close = document.querySelector('.close');
 
-
-let boardContainer = document.querySelector('.board')
-let cardContainer = document.querySelector('.cards')
+let boardContainer = document.querySelector('.board');
+let cardContainer = document.querySelector('.cards');
 let cards = document.querySelectorAll('.cards_single');
-let moves = document.querySelector('.moves')
-let timer = document.querySelector('.timer')
-let start = document.querySelector('.start')
-let win = document.querySelector('.win')
-// let flippedCards = document.querySelectorAll('.flip')
-let totalFlips = 0
-let lastClicked;
+let moves = document.querySelector('.moves');
+let timer = document.querySelector('.timer');
+let start = document.querySelector('.start');
+let win = document.querySelector('.win');
+// let flippedCards = document.querySelectorAll('.flip');
+let totalFlips = 0;
+let lastClicked = null;
 
 const initial = {
     gameStarted: false,
@@ -21,6 +20,8 @@ const initial = {
     totalTime: 0,
     loop: null
 }
+
+// modal 
 
 howToBut.onclick = function() {
     modal.style.display = 'block'
@@ -36,6 +37,7 @@ window.onclick = function(event) {
     }
 }
 
+// Flip up cards to show on load/start button 
 
 
 
@@ -43,11 +45,7 @@ window.onclick = function(event) {
 
 
 
-
-
-
-
-// let len = cards.classList.contains('flip')
+// card match logic
 
 cards.forEach((card, index) => card.addEventListener('click', function(event) {
     let flippedCards = document.querySelectorAll('.flip')
@@ -62,8 +60,6 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
                     this.classList.toggle('flip')
                     this.classList.add('matched')
                     lastClicked.classList.add('matched')
-                // } else if (lastClickedImg === undefined) {
-                //     console.log('none to compare')
                 } else if (lastClickedImg !== img[index].getAttribute('src')) {
                     console.log('not a match')
                     this.classList.toggle('flip')
@@ -78,17 +74,17 @@ cards.forEach((card, index) => card.addEventListener('click', function(event) {
             this.classList.toggle('flip')
             console.log('first card flip')
         } else if (flippedCards.length >= 14) {
+            this.classList.toggle('flip')
             alert('game over')
         }
         lastClicked = this
         lastClickedImg = img[index].getAttribute('src')
         totalFlips++
-        console.log(totalFlips)
-        console.log(flippedCards.length)
+        document.querySelector('.matches').innerHTML = flippedCards.length + ' cards matched!'
+        document.querySelector('.moves').innerHTML = totalFlips + ' card flipped'
     }
 }));
 
-start.addEventListener('click', initial)
 
 
 
@@ -99,13 +95,8 @@ start.addEventListener('click', initial)
 
 
 
-// document.body.onload = startGame();
 
-// function startGame() {
-//     for (let i = cards.children.length; i >= 0; i--) {
-//         cards.appendChild(cards.children[Math.random() * i | 0])
-//     }
-// }
+
 
 
 
