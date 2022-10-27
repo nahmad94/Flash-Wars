@@ -40,9 +40,19 @@ window.onclick = function(event) {
 
 // Flip up cards to show on load/start button 
 
+start.addEventListener('click', function() {
+    cards.forEach((card, index) => {
+        card.classList.toggle('flip')
+    })
+    setTimeout(removeClass, 3500)
+    start.remove()
+})
 
-
-
+function removeClass() {
+    cards.forEach((card, index) => {
+        card.classList.remove('flip')
+    })
+}
 
 
 
