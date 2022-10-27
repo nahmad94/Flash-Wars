@@ -1,6 +1,8 @@
-.body {
-    background-color: grey;
-    display: flex;
+body {
+    background: url('./imgs/background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+
     font-family: helvetica;
 }
 
@@ -53,26 +55,26 @@
 }
 
 .cards_single {
-    background: white;
+    background: black;
     color: green;
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
     margin: 5px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     box-shadow: none;
     cursor: pointer;
     text-align: center;
     -webkit-transition: transform 0.6s;
     transform-style: preserve-3d;
     height: auto;
-    width: px;
+    width: 20%;
     user-select: none;
 }
 
 .card_logo, .card_flip {
     text-align: center;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 .card_front, .card_back {
@@ -122,21 +124,3 @@
 .matched {
     border: solid black 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
