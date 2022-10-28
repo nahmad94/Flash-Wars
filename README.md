@@ -4,7 +4,7 @@
 
 ## Project Details/screenshots
 
-<img width="600px" height="auto" alt="game screenshot" src="https://photos.app.goo.gl/XK3D1tRqTLoKp5xf9">
+<img width="600px" height="auto" alt="game screenshot" src="https://photos.app.goo.gl/kz9HFWfBejwvJgbH9">
 
 ## Wireframe
 
